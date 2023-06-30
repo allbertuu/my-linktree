@@ -1,0 +1,13 @@
+{
+    "name": "my-linktree",
+    "version": "1.0.0",
+    "description": "Criei meu próprio Linktree, utilizando Sass/SCSS e metodologia BEM.",
+    "main": "index.html",
+    "repository": "https://github.com/allbertuu/my-linktree",
+    "author": "Alberto Santos <https://github.com/allbertuu>",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "sass": "^1.58.1"
+    }
+}

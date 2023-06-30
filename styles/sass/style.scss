@@ -1,0 +1,156 @@
+/* import Global styles */
+@use "../global.css";
+/* Shadows */
+$shadow-md: 0 5px 12px 0 #3030320f;
+$shadow-lg: 0 10px 20px 0 #080f349b;
+/* Border radius */
+$border-radius-md: 1.875rem; /* 30px */
+/* Colors */
+$accent-color: #009592;
+$secondary-color: #1b465f;
+$black-color: #000;
+$white-color: #fff;
+
+.container {
+  height: 100vh;
+}
+
+.card {
+  background-color: $white-color;
+  box-shadow: $shadow-lg;
+  border-radius: $border-radius-md;
+  max-width: 33.75rem; /* 540px */
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+
+  &__cover {
+    width: 100%;
+    max-height: 8rem;
+    object-fit: cover;
+  }
+
+  &__avatar {
+    width: 100%;
+    max-width: 10.25rem; /* 164px */
+    display: block;
+    margin: -5rem auto 0;
+  }
+
+  &__content {
+    padding: 1.5rem;
+
+    &__name {
+      margin: 0 0 1rem;
+      text-align: center;
+      color: $accent-color;
+    }
+
+    &__description {
+      color: #5c6779;
+      text-align: center;
+    }
+
+    &__icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+
+      /* Para o conteúdo refletir o tamanho real do container dele */
+      a {
+        display: flex;
+      }
+
+      button:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem; /* 12px */
+      margin-top: 1.875rem; /* 30px */
+
+      &__item {
+        flex: 1;
+        border-radius: 4.625rem; /* 74px */
+        position: relative;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $accent-color;
+          color: $white-color;
+
+          .image-box {
+            background-color: $white-color;
+          }
+        }
+
+        &:not(:hover) {
+          box-shadow: $shadow-md;
+          outline: 1px solid #eff2f6;
+        }
+
+        &:focus {
+          /* for better accesibility */
+          outline: 1px solid $black-color;
+        }
+
+        a {
+          padding: 1.5rem; /* 24px */
+          display: block;
+        }
+
+        h3 {
+          font-weight: 500;
+        }
+
+        .image-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          inset: 8px 8px 8px auto;
+          padding: 1rem 1.2rem;
+          background-color: #eff2f6;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
+
+.align-everything {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media querys */
+@media (max-width: 475px) {
+  .container {
+    padding: 0;
+  }
+
+  .align-everything {
+    justify-content: initial;
+    align-items: initial;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  html {
+    font-size: 85%; /* 13.6px/16px */
+  }
+}
